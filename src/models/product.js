@@ -2,33 +2,47 @@ import sequelize from "../config/db.js";
 import { DataTypes } from "sequelize";
 
 const Product = sequelize.define("Product", {
-  name: {
+   name: {
     type: DataTypes.STRING,
-    allowNull: false, 
-  },
-  description: {
-    type: DataTypes.TEXT,
-    allowNull: true, 
+    allowNull: false
   },
   price: {
-    type: DataTypes.DECIMAL(10, 2),
-    allowNull: false,
+    type: DataTypes.FLOAT,
+    allowNull: false
   },
-  stock: {
-    type: DataTypes.INTEGER,
-    defaultValue: 0,
+  originalPrice: {
+    type: DataTypes.FLOAT
+  },
+  discountPercent: {
+    type: DataTypes.INTEGER
+  },
+  availability: {
+    type: DataTypes.STRING,
+    defaultValue: "In stock"
   },
   category: {
-    type: DataTypes.STRING,
-    allowNull: true,
+    type: DataTypes.STRING
   },
-  imageUrl: {
-    type: DataTypes.STRING,
-    allowNull: true,
-  },
-  isAvailable: {
+  freeShipping: {
     type: DataTypes.BOOLEAN,
-    defaultValue: true,
+    defaultValue: false
+  },
+  selectedColor: {
+    type: DataTypes.STRING
+  },
+  selectedSize: {
+    type: DataTypes.STRING
+  },
+  quantity: {
+    type: DataTypes.INTEGER,
+    defaultValue: 1
+  },
+  description: {
+    type: DataTypes.TEXT
+  },
+  thumbnailIndex: {
+    type: DataTypes.INTEGER,
+    defaultValue: 0
   },
 }, {
   timestamps: true, 

@@ -2,6 +2,7 @@ import User from "../models/user.js";
 import Data from "../models/data.js";
 import jwt from "jsonwebtoken"
 import bcrypt from "bcryptjs";
+import Product from "../models/product.js";
 const sec = process.env.SECRET_KEY
 
 
@@ -203,3 +204,38 @@ if(!user)return res.status(400).json({message:"data not created"})
     }
 }
 
+////////////////////////////////////////////////////////
+
+export const createProduct = async (req, res) => {
+  try {
+    const newProduct = await Product.create(req.body);
+    res.status(201).json({ message: "Product created", product: newProduct });
+  } catch (error) {
+    res.status(500).json({ message: "Error creating product", error });
+  }
+};
+
+export const updateProduct = async (req, res) => {
+  try {
+    const product = await Product.findByPk(req.params.id);
+    if (!product) return res.status(404).json({ message: "Product not found" });
+
+    await product.update(req.body);
+    res.status(200).json({ message: "Product updated", product });
+  } catch (error) {
+    res.status(500).json({ message: "Error updating product", error });
+  }
+};
+
+
+export const getallproduct = async (req,res)=>{
+    try {
+const user = await Product.findAll()
+if(!user)return res.status(400).json({message:"data not created"})
+
+    res.status(200).json({message:"data cerated successfully",user:user})
+    } catch (error) {
+        res.status(400).json({message:"error",error:error.message}) 
+        
+    }
+}
