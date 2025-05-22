@@ -3,6 +3,7 @@ import Data from "../models/data.js";
 import jwt from "jsonwebtoken"
 import bcrypt from "bcryptjs";
 import Product from "../models/product.js";
+import Common from "../models/commontypes.js";
 const sec = process.env.SECRET_KEY
 
 
@@ -258,4 +259,11 @@ export const getallproduct = async (req,res)=>{
 
     // status code common = "200"  true , succcc
     
-    
+    export const createCommon = async (req, res) => {
+  try {
+    const newProduct = await Common.create(req.body);
+    res.status(201).json({ message: "Product created", product: newProduct });
+  } catch (error) {
+    res.status(500).json({ message: "Error creating product", error });
+  }
+};
