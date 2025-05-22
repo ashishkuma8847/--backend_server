@@ -17,6 +17,7 @@ const authenticate = (req,res,next)=>{
       next()
     })
 }
+
 router.post("/createproduct",createProduct)
 router.delete("/deleteproduct/:id",deleteProduct)
 router.put("/updateproduct/:id",updateProduct)

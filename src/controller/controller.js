@@ -232,13 +232,12 @@ export const updateProduct = async (req, res) => {
 
 export const getallproduct = async (req,res)=>{
     try {
-        const user = await Product.findAll()
-        if(!user)return res.status(400).json({message:"data not created"})
+        const data = await Product.findAll()
+        if(!data)return res.status(400).json({message:"data not created"})
             
-            res.status(200).json({message:"data cerated successfully",user:user})
+            res.status(200).json({message:"getallproduct",data:data})
         } catch (error) {
             res.status(400).json({message:"error",error:error.message}) 
-            
         }
     }
 
@@ -249,8 +248,14 @@ export const getallproduct = async (req,res)=>{
         if (!product) return res.status(404).json({ message: "Product not found" });
     
         await product.destroy({where:{}});
-        res.status(200).json({ message: "Product deleted." });
+        res.status(200).json({ message: "Product deleted."});
       } catch (error) {
         res.status(500).json({ message: "Error deleted product", error });
       }
     };
+
+
+
+    // status code common = "200"  true , succcc
+    
+    
