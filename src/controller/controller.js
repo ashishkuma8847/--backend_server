@@ -267,3 +267,17 @@ export const getallproduct = async (req,res)=>{
     res.status(500).json({ message: "Error creating product", error });
   }
 };
+
+export const getallcommon = async (req,res)=>{
+    try {
+        const common= await Common.findAll()
+        if(!common)return res.status(400).json({message:"data not created"})
+
+        const data = await Product.findAll()
+        if(!data)return res.status(400).json({message:"data not created"})
+            
+            res.status(200).json({message:"getallproduct",data:data,common:common})
+        } catch (error) {
+            res.status(400).json({message:"error",error:error.message}) 
+        }
+    } 
