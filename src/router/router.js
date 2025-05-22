@@ -18,7 +18,7 @@ const authenticate = (req,res,next)=>{
     })
 }
 router.post("/createCommon",createCommon)
-router.get("/common",getallcommon)
+router.get("/common/:id",getallcommon)
 
 
 router.post("/createproduct",createProduct)

@@ -270,7 +270,7 @@ export const getallproduct = async (req,res)=>{
 
 export const getallcommon = async (req,res)=>{
     try {
-        const common= await Common.findAll()
+        const common= await Common.findByPk(req.params.id)
         if(!common)return res.status(400).json({message:"data not created"})
 
         const data = await Product.findAll()
