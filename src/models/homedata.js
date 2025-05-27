@@ -1,22 +1,24 @@
 import sequelize from "../config/db.js";
 import { DataTypes } from "sequelize";
 
-const Data = sequelize.define("Data", {
-  heading: {
+const homeData = sequelize.define("homeData", {
+  name: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  value: {
+  price: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  title: {
+  originalPrice: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  other: {
+  discountPercent: {
     type: DataTypes.STRING,
     allowNull: false,
-  },
+  }
 });
-export default Data;
+export default homeData;
+
+// Data.sync({force:true})

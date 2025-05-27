@@ -3,7 +3,12 @@ import express from "express"
 import dotenv from "dotenv"
 import cors from "cors"
 import  "./src/models/user.js";
-import router from "./src/router/router.js";
+import productrouter from "./src/router/productitems.router.js";
+import homeitemsrouter from "./src/router/homeitems.router.js";
+import userrouter from "./src/router/user.router.js";
+import routerhd from "./src/router/homedatar.router.js";
+import hotdealmenu from "./src/router/hotdealmenu.router.js";
+import hotdealside from "./src/router/Hotdealsidemenu.router.js";
 
 dotenv.config()
 
@@ -32,4 +37,4 @@ async function connection() {
 }
 connection()
 
-app.use("/api",router)
+app.use("/api",userrouter,routerhd,homeitemsrouter,productrouter,hotdealmenu,hotdealside)

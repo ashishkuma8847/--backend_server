@@ -8,31 +8,24 @@ const Product = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    raiting: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    rewiews: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     price: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     originalPrice: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.STRING,
     },
     discountPercent: {
-      type: DataTypes.INTEGER,
-    },
-    availability: {
-      type: DataTypes.STRING,
-      defaultValue: "In stock",
-    },
-    category: {
       type: DataTypes.STRING,
     },
-    freeShipping: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
-    },
-    selectedColor: {
-      type: DataTypes.STRING,
-    },
-
     selectedSize: {
       type: DataTypes.TEXT,
       allowNull: true,
@@ -46,24 +39,39 @@ const Product = sequelize.define(
       },
     },
 
-    color: {
+    selectedColor: {
       type: DataTypes.TEXT,
       allowNull: true,
       get() {
-        const value = this.getDataValue("color");
+        const value = this.getDataValue("selectedColor");
         return value ? JSON.parse(value) : [];
       },
       set(value) {
-        this.setDataValue("color", JSON.stringify(value));
+        this.setDataValue("selectedColor", JSON.stringify(value));
       },
     },
 
-    description: {
+    paragraph: {
       type: DataTypes.TEXT,
+      allowNull: true,
+      get() {
+        const value = this.getDataValue("paragraph");
+        return value ? JSON.parse(value) : [];
+      },
+      set(value) {
+        this.setDataValue("paragraph", JSON.stringify(value));
+      },
     },
-    thumbnailIndex: {
-      type: DataTypes.INTEGER,
-      defaultValue: 0,
+    productInfomation: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+      get() {
+        const value = this.getDataValue("productInfomation");
+        return value ? JSON.parse(value) : [];
+      },
+      set(value) {
+        this.setDataValue("productInfomation", JSON.stringify(value));
+      },
     },
   },
   {
@@ -74,3 +82,4 @@ const Product = sequelize.define(
 export default Product;
 
 // Product.sync({force:true}).then(()=>console.log("product was clear"))
+

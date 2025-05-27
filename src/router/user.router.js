@@ -1,7 +1,8 @@
 import express from "express"
 import jwt from "jsonwebtoken"
-import {  createCommon, createdata, createProduct, createuser, deleteall, deletealldata, deleteone, deleteonedata, deleteProduct, getall, getallcommon, getalldata, getallproduct, getone, getonedata, login, signup, update, updatedata, updateProduct } from "../controller/controller.js"
+import {    createuser, deleteall, deleteone, getall, getone, login, signup, update } from "../controller/user.controller.js"
 import upload from "../middleware/upload.js"
+import { getallproductsdata } from "../controller/allproduct.controller.js"
 
 const router = express.Router()
 const sec = process.env.SECRET_KEY
@@ -17,27 +18,17 @@ const authenticate = (req,res,next)=>{
       next()
     })
 }
-router.post("/createCommon",createCommon)
-router.get("/common/:id",getallcommon)
 
 
-router.post("/createproduct",createProduct)
-router.delete("/deleteproduct/:id",deleteProduct)
-router.put("/updateproduct/:id",updateProduct)
-router.get("/getallproduct",getallproduct)
 
-router.post("/createdata",createdata)
-router.delete("/deleteonedata/:id",deleteonedata)
-router.delete("/deletealldata",deletealldata)
-router.get("/getalldata",getalldata)
-router.get("/getonedata/:id",getonedata)
-router.put("/updatedata/:id",updatedata)
+
 
 
 router.post("/create",createuser)
 router.delete("/deleteone/:id",deleteone)
 router.delete("/deleteall",deleteall)
 router.get("/getall",getall)
+router.get("/getallproductdata",getallproductsdata)
 router.get("/getone/:id",getone)
 router.put("/update/:id",update)
 router.post("/signup",signup)
