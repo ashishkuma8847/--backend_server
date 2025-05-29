@@ -53,11 +53,11 @@ if(!user)return res.status(400).json({message:"data not created"})
 
 export const getonedata = async (req,res)=>{
     try {
-        const {id}= req.params
-const user = await Data.findOne({where:{id}})
-if(!user)return res.status(400).json({message:"data not created"})
+       
+const user = await Data.findByPk(req.params.id)
+if(!user)return res.status(400).json({message:"data not get"})
 
-    res.status(200).json({message:"data cerated successfully",user:user})
+    res.status(200).json({message:"data get successfully",user:user})
     } catch (error) {
         res.status(400).json({message:"error",error:error.message}) 
         
