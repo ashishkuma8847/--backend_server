@@ -26,6 +26,10 @@ const Data = sequelize.define("Data", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  images:{
+       type: DataTypes.STRING,
+    allowNull: false,
+  }
 });
 export default Data;
 

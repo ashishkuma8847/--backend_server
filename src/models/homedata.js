@@ -17,7 +17,11 @@ const homeData = sequelize.define("homeData", {
   discountPercent: {
     type: DataTypes.STRING,
     allowNull: false,
-  }
+  },
+   images: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
 });
 export default homeData;
 

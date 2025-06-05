@@ -8,10 +8,9 @@ import homeitemsrouter from "./src/router/homeitems.router.js";
 import userrouter from "./src/router/user.router.js";
 import routerhd from "./src/router/homedatar.router.js";
 import hotdealmenu from "./src/router/hotdealmenu.router.js";
-import hotdealside from "./src/router/Hotdealsidemenu.router.js";
 import path from "path";
+import { dirname } from "./src/middleware/upload.js";
 import { fileURLToPath } from "url";
-
 dotenv.config();
 
 const app = express();
@@ -21,16 +20,12 @@ app.use(express.json());
 
 const PORT = process.env.PORT;
 
-// For ES module support (__dirname workaround)
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-console.log(__dirname, "__dirname");
+// const __filename = fileURLToPath  (import.meta.url);
+// const __dirname = path.dirname(__filename);
 
-// Serve static files in /uploads/images
-app.use(
-  "/upload",
-  express.static(path.join(__dirname, "uploads/images/"))
-);
+
+
+app.use("/upload",express.static(path.join(dirname, "../../uploads/images/")));
 
 async function connection() {
   try {
@@ -50,8 +45,7 @@ app.use(
   routerhd,
   homeitemsrouter,
   productrouter,
-  hotdealmenu,
-  hotdealside
+  hotdealmenu
 );
 
 app.listen(PORT, () => {

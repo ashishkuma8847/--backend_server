@@ -1,8 +1,8 @@
 import express from "express"
 import jwt from "jsonwebtoken"
 import {    createuser, deleteall, deleteone, getall, getone, login, signup, update } from "../controller/user.controller.js"
-import upload from "../middleware/upload.js"
 import { getallproductsdata } from "../controller/allproduct.controller.js"
+import { upload } from "../middleware/upload.js"
 
 const router = express.Router()
 const sec = process.env.SECRET_KEY
@@ -33,6 +33,7 @@ router.get("/getone/:id",getone)
 router.put("/update/:id",update)
 router.post("/signup",signup)
 router.post("/login",login)
+
 router.post("/images",upload.array("file",5),(req,res)=>{
     if(!req.files  || req.files.length === 0){
       return  res.status(400).json({message:"fies was empty"})
