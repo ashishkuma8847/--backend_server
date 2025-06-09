@@ -11,6 +11,7 @@ import hotdealmenu from "./src/router/hotdealmenu.router.js";
 import path from "path";
 import { dirname } from "./src/middleware/upload.js";
 import { fileURLToPath } from "url";
+import hotdealsidemenu from "./src/router/Hotdealsidemenu.router.js";
 dotenv.config();
 
 const app = express();
@@ -43,9 +44,10 @@ app.use(
   "/api",
   userrouter,
   routerhd,
-  homeitemsrouter,
+  homeitemsrouter,  
   productrouter,
-  hotdealmenu
+  hotdealmenu,
+  hotdealsidemenu,
 );
 
 app.listen(PORT, () => {

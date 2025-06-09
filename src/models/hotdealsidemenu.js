@@ -41,6 +41,10 @@ const Hotdealsidemenu = sequelize.define("Hotdealsidemenu", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  images: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
 });
 export default Hotdealsidemenu;
 
