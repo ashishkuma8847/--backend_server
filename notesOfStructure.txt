@@ -22,3 +22,96 @@
     "paragraph":"Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lectus lorem nunc leifend laorevtr istique et congue. Vivamus adipiscin vulputate g nisl ut dolor ..."
 
 }for hotdeal side menu
+
+
+{
+	"name": "Nike Airmax 270 React",
+    "price":"$534,33",
+    "originalPrice":"$299,43",
+    "discountPercent":"24% Off",
+    "raiting":"ashish1749011885393.svg",
+    "images":[
+        {
+            "img":"Products_1747627235655.png"
+        },
+        {
+            "img":"Products_1747627268646.png"
+        },
+        {
+            "img":"ashish1749104121930.png"
+        },
+        {
+            "img":"Products_1747627259084.png"
+        }
+    ],
+    "bestsellerimg":[
+        {
+            "img":"Products_1747627218304.png"
+        },
+        {
+            "img":"Products_1747627218304.png"
+        }
+    ],
+    "selectedColor":[
+        {
+            "color":"#006CFF"
+        },
+        {
+            "color":"#FC3E39"
+        }, 
+        {
+            "color":"#171717"
+        },
+        {
+            "color":"#FFF600"
+        }
+    ],
+    "rewiews":"0",
+    "paragraph":[
+        {
+            "title":"Product Infomation"
+        },
+        {
+            "title":"Reviews"
+        },
+        {
+            "title":"Another tab"
+        }
+    ],
+    "productInfomation":[
+        {
+            "title":"air max are always very comfortable fit, clean and just perfect in every way. just the box was too small and scrunched the sneakers up a little bit, not sure if the box was always this small but the 90s are and will always be one of my favorites."
+        },
+        {
+            "title":"air max are always very comfortable fit, clean and just perfect in every way. just the box was too small and scrunched the sneakers up a little bit, not sure if the box was always this small but the 90s are and will always be one of my favorites."
+        },
+        {
+            "title":"air max are always very comfortable fit, clean and just perfect in every way. just the box was too small and scrunched the sneakers up a little bit, not sure if the box was always this small but the 90s are and will always be one of my favorites."
+        }
+    ],
+    "avalible":[
+        {
+            "title":"Availability:"
+        },
+        {
+            "title":"Category:"
+        },
+        {
+            "title":"Free shipping"
+        }
+    ],
+    "optionavalible":[
+       {
+            "title":"In stock"
+        },
+        {
+            "title":"Accessories"
+        }
+    ]
+}
+ptoducts
+
+  
+
+
+   
