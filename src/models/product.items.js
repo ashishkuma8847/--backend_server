@@ -26,6 +26,9 @@ const Product = sequelize.define(
     discountPercent: {
       type: DataTypes.STRING,
     },
+     catagory: {
+      type: DataTypes.STRING,
+    },
     images: {
       type: DataTypes.TEXT,
       allowNull: true,
