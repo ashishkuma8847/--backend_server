@@ -1,9 +1,15 @@
 import sequelize from "../config/db.js";
-import { DataTypes, json } from "sequelize";
+import { DataTypes } from "sequelize";
 
 const Product = sequelize.define(
   "Product",
   {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
+      primaryKey: true,
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -26,8 +32,19 @@ const Product = sequelize.define(
     discountPercent: {
       type: DataTypes.STRING,
     },
-     catagory: {
+    catagory: {
       type: DataTypes.STRING,
+    },
+    size: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+      get() {
+        const value = this.getDataValue("size");
+        return value ? JSON.parse(value) : [];
+      },
+      set(value) {
+        this.setDataValue("size", JSON.stringify(value));
+      },
     },
     images: {
       type: DataTypes.TEXT,
@@ -41,7 +58,7 @@ const Product = sequelize.define(
       },
     },
     bestsellerimg: {
-       type: DataTypes.TEXT,
+      type: DataTypes.TEXT,
       allowNull: true,
       get() {
         const value = this.getDataValue("bestsellerimg");

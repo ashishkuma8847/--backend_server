@@ -2,6 +2,12 @@ import sequelize from "../config/db.js";
 import { DataTypes } from "sequelize";
 
 const Data = sequelize.define("Data", {
+  id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
+      primaryKey: true,
+    },
   name: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -33,4 +39,5 @@ const Data = sequelize.define("Data", {
 });
 export default Data;
 
-// Data.sync({force:true})
+// Data.sync({force:true}).then(()=>console.log("product was clear"))
+
