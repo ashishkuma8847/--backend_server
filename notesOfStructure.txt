@@ -5,51 +5,50 @@
     "discountPercent":"24% Off",
     "raiting":"ashish1749011885393.svg",
     "hotdeal":"HOT",
-    "images":"Products_1747627218304.png"
-} hotdeal and homeitems stucture
-
-(data.slice(0, 3)
-
-{
-	"name": "Nike Airmax 270 React",
-    "price":"$534,33",
-    "originalPrice":"$299,43",
-    "discountPercent":"24% Off",
-    "raiting":"ashish1749011885393.svg",
-    "hotdeal":"HOT",
-    "images":"ashish1749011288027.png",
-    "reviews":"0",
-    "paragraph":"Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lectus lorem nunc leifend laorevtr istique et congue. Vivamus adipiscin vulputate g nisl ut dolor ..."
-
-}for hotdeal side menu
-
-
-{
-	"name": "Nike Airmax 270 React",
-    "price":"$534,33",
-    "originalPrice":"$299,43",
-    "discountPercent":"24% Off",
-    "raiting":"ashish1749011885393.svg",
-    "images":[
+    "headimgage":"Products_1747627225413.png",
+    "size":[
         {
-            "img":"Products_1747627235655.png"
+            "size":"S"
         },
         {
-            "img":"Products_1747627268646.png"
+            "size":"M"
         },
         {
-            "img":"ashish1749104121930.png"
+            "size":"XS"
         },
         {
-            "img":"Products_1747627259084.png"
+            "size":"XL"
+        },
+        {
+            "size":"XXL"
+        }
+    ],
+    "detailimages":[
+        {
+            "img":"Products_1747627099102.png"
+        },
+        {
+            "img":"Products_1747627225413.png"
+        },
+        {
+            "img":"Products_1747627225413.png"
+        },
+        {
+            "img":"Products_1747627225413.png"
         }
     ],
     "bestsellerimg":[
         {
-            "img":"Products_1747627218304.png"
+            "img":"Products_1747627048568.png"
         },
         {
-            "img":"Products_1747627218304.png"
+            "img":"Products_1747627048568.png"
+        },
+        {
+            "img":"Products_1747627048568.png"
+        },
+        {
+            "img":"Products_1747627048568.png"
         }
     ],
     "selectedColor":[
@@ -107,11 +106,7 @@
         {
             "title":"Accessories"
         }
-    ]
+    ],
+    "bestsellerp":"Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lectus lorem nunc leifend laorevtr istique et congue. Vivamus adipiscin vulputate g nisl ut dolor ...",
+    "categroy":"purse"
 }
-ptoducts
-
-  
-
-
-   

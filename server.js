@@ -4,14 +4,10 @@ import dotenv from "dotenv";
 import cors from "cors";
 import "./src/models/user.js";
 import productrouter from "./src/router/productitems.router.js";
-import homeitemsrouter from "./src/router/homeitems.router.js";
 import userrouter from "./src/router/user.router.js";
 import routerhd from "./src/router/homedatar.router.js";
-import hotdealmenu from "./src/router/hotdealmenu.router.js";
 import path from "path";
 import { dirname } from "./src/middleware/upload.js";
-import { fileURLToPath } from "url";
-import hotdealsidemenu from "./src/router/Hotdealsidemenu.router.js";
 dotenv.config();
 
 const app = express();
@@ -44,10 +40,7 @@ app.use(
   "/api",
   userrouter,
   routerhd,
-  homeitemsrouter,  
   productrouter,
-  hotdealmenu,
-  hotdealsidemenu,
 );
 
 app.listen(PORT, () => {

@@ -22,6 +22,14 @@ const Product = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    bestsellerp: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    hotdeal: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     price: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -32,7 +40,7 @@ const Product = sequelize.define(
     discountPercent: {
       type: DataTypes.STRING,
     },
-    catagory: {
+    categroy: {
       type: DataTypes.STRING,
     },
     size: {
@@ -46,15 +54,19 @@ const Product = sequelize.define(
         this.setDataValue("size", JSON.stringify(value));
       },
     },
-    images: {
+    headimgage: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    detailimages: {
       type: DataTypes.TEXT,
       allowNull: true,
       get() {
-        const value = this.getDataValue("images");
+        const value = this.getDataValue("detailimages");
         return value ? JSON.parse(value) : [];
       },
       set(value) {
-        this.setDataValue("images", JSON.stringify(value));
+        this.setDataValue("detailimages", JSON.stringify(value));
       },
     },
     bestsellerimg: {
