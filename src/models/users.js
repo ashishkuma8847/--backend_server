@@ -1,8 +1,13 @@
 import sequelize from "../config/db.js";
 import { DataTypes } from "sequelize";
 
-const User = sequelize.define("User",{
-   
+const Users = sequelize.define("users",{
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
+      primaryKey: true,
+    },
     name:{
         type:DataTypes.STRING,
         allowNull:false
@@ -16,4 +21,5 @@ const User = sequelize.define("User",{
         allowNull:false
     },
 })
-export default User
+export default Users
+//  Users.sync({force:true}).then(()=>console.log("product was clear"))

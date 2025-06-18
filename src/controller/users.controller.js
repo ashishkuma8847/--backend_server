@@ -1,21 +1,20 @@
-import User from "../models/user.js";
+import Users from "../models/users.js";
 
 import jwt from "jsonwebtoken"
 import bcrypt from "bcryptjs";
-import Product from "../models/product.items.js";
 const sec = process.env.SECRET_KEY
 
 
 export const signup = async (req,res)=>{
     try {
         const {name,email,password}=req.body
-        const data = await User.findOne({where:{email}})
+        const data = await Users.findOne({where:{email}})
         if(data) return res.status(400).json({message:"user alrady exist"}) 
         
         const hashdata = await bcrypt.hash(password,10)
         if(!hashdata) return res.status(400).json({message:"password not hash"})
             
-            const user = await User.create({name,email,password:hashdata})
+            const user = await Users.create({name,email,password:hashdata})
             if(!user)return res.status(400).json({message:"user not cerater",user:user}) 
                 res.status(201).json({message:"user created",user:user})
     } catch (error) {
@@ -26,7 +25,7 @@ export const signup = async (req,res)=>{
 export const login = async (req,res)=>{
     try {
         const {email,password}=req.body
-        const data = await User.findOne({where:{email}})
+        const data = await Users.findOne({where:{email}})
         if(!data) return res.status(400).json({message:"user is not found"}) 
         
         const compare = await bcrypt.compare(password,data.password)
@@ -43,7 +42,7 @@ export const login = async (req,res)=>{
 export const createuser = async (req,res)=>{
     try {
 const {name ,email,password}=req.body
-const user = await User.create({name,email,password})
+const user = await Users.create({name,email,password})
 if(!user)return res.status(400).json({message:"user not created"})
 
     res.status(200).json({message:"user cerated successfully",user:user})

@@ -2,12 +2,13 @@ import sequelize from "./src/config/db.js";
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import "./src/models/user.js";
+import "./src/models/users.js";
 import productrouter from "./src/router/productitems.router.js";
 import userrouter from "./src/router/user.router.js";
 import routerhd from "./src/router/homedatar.router.js";
 import path from "path";
 import { dirname } from "./src/middleware/upload.js";
+import cartRouter from "./src/router/cart.router.js";
 dotenv.config();
 
 const app = express();
@@ -41,6 +42,7 @@ app.use(
   userrouter,
   routerhd,
   productrouter,
+  cartRouter
 );
 
 app.listen(PORT, () => {

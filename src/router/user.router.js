@@ -1,6 +1,6 @@
 import express from "express"
 import jwt from "jsonwebtoken"
-import {    createuser, deleteall, deleteone, getall, getone, login, signup, update } from "../controller/user.controller.js"
+import {    createuser, deleteall, deleteone, getall, getone, login, signup, update } from "../controller/users.controller.js"
 import { upload } from "../middleware/upload.js"
 
 const router = express.Router()
@@ -17,11 +17,6 @@ const authenticate = (req,res,next)=>{
       next()
     })
 }
-
-
-
-
-
 
 router.post("/create",createuser)
 router.delete("/deleteone/:id",deleteone)
