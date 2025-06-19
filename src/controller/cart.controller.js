@@ -6,6 +6,10 @@ export const addToCart = async (req, res) => {
 
   try {
     let item = await Cart.findOne({ where: { userId, productId } });
+    if (userId === item.userId) {
+      return  res.status(400).json({ message:"cart already added" });
+      
+    }
     if (item) {
       item.quantity += quantity;
       await item.save();
