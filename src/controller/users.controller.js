@@ -32,7 +32,7 @@ export const login = async (req,res)=>{
         if(!compare) return res.status(400).json({message:"password not matched.."})
             
            const jst= jwt.sign({id:data.id,email:data.email},sec,{expiresIn:"1h"})
-            res.status(201).json({message:"login successfull",token:jst}) 
+            res.status(201).json({message:"login successfull",token:jst,data:data.id}) 
 
     } catch (error) {
         res.status(400).json({message:"error",error:error.message}) 
