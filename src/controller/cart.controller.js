@@ -8,7 +8,7 @@ export const addToCart = async (req, res) => {
   try {
     let item = await Cart.findOne({ where: { userId, productId } });
     // if(item.productId === productId) return     res.status(400).json({ message: "cart already added" });
-
+console.log(item)
     if (item) {
       item.quantity += quantity;
       await item.save();
@@ -21,7 +21,7 @@ export const addToCart = async (req, res) => {
   }
 };
 
-// // View cart
+// // View cart`
 export const getCart = async (req, res) => {
   try {
     const cartItems = await Cart.findAll({
