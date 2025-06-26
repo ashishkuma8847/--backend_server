@@ -31,11 +31,11 @@ const Product = sequelize.define(
       allowNull: false,
     },
     price: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     originalPrice: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
     },
     discountPercent: {
       type: DataTypes.STRING,
