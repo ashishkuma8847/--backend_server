@@ -20,9 +20,10 @@ const Cart = sequelize.define("Cart", {
     type: DataTypes.INTEGER,
     defaultValue: 1,
   },
-});
+}
+);
 
 Cart.belongsTo(Product, { foreignKey: "productId" });
 
 export default Cart;
-// Cart.sync({force:true}).then(()=>console.log("product was clear")) 
+// Cart.sync({force:true}).then(()=>console.log("cart was clear")) 

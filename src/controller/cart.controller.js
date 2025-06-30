@@ -4,12 +4,15 @@ import Product from "../models/product.items.js";
 // Add item to cart
 export const addToCart = async (req, res) => {
   const { userId, productId, quantity } = req.body;
+  if (!userId || !productId || !quantity) {
+    console.warn("Missing cart data:", { userId, productId, quantity });
+    return;
+  }
 
   try {
     let item = await Cart.findOne({ where: { userId, productId } });
     // if(item.productId === productId) return     res.status(400).json({ message: "cart already added" });
-console.log(item)
-    if (item) {
+        if (item) {
       item.quantity += quantity;
       await item.save();
     } else {
@@ -28,12 +31,13 @@ export const getCart = async (req, res) => {
       where: { userId: req.params.userId },
       include: [Product],
     });
+    console.log(cartItems,"------")
 if(!cartItems) {
   return  res.status(400).json({ message: "cart not find data" });
 
 }
 
-    res.status(200).json({ message: "cartitems fd", cartItems });
+    res.status(200).json({ message: "cartitems get", cartItems });
 
   } catch (err) {
     res.status(500).json({ message: err.message ,message2:req.params.userId});
