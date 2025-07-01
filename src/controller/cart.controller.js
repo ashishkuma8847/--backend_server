@@ -62,7 +62,7 @@ export const updateItem = async (req, res) => {
 };
 
 // Remove item
-export const removeItem = async (req, res) => {
+export const removeItem = async (req, res) => {             
   const { userId, productId } = req.body;
   try {
     await Cart.destroy({ where: { userId, productId } });
